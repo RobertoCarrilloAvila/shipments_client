@@ -1,4 +1,36 @@
 
 <div class="container">
-	
+	<div class="row">
+		<div class="col">
+			<h3 class="mt-2">Tracking Number: <%= @shipment['tracking_number'] %></h3>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<h3>Carrier: <%= @shipment['carrier'] %></h3>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<h3>Status: <%= @shipment['status'] %></h3>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<h3>Events:</h3>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<ul>
+				<% @shipment['events'].each do |event| %>
+						<li><%= "#{event['created_at']} -> #{event['description']}" %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
 </div>
